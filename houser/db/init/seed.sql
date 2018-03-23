@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS Dummy;
+DROP TABLE IF EXISTS Shelfie;
 
-CREATE TABLE Dummy
+CREATE TABLE Shelfie
 (
     id SERIAL PRIMARY KEY,
     name VARCHAR(60),
@@ -8,7 +8,7 @@ CREATE TABLE Dummy
     age INTEGER
 );
 
-INSERT INTO Dummy
+INSERT INTO Shelfie
     ( name, favColor, age )
     VALUES
         ( 'Elaine', 'Red', 52 ),

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const controller = require('./controller');
+const hc = require('./house_controller');
 const massive = require('massive');
 
 const app = express();
@@ -20,7 +20,7 @@ massive( process.env.DATABASE_URL)
         app.listen(port, () => console.log("Listening on port " + port));
     })
 
-// app.get(, );
+app.get('/api/readHouseList', hc.read);
 // app.post(, );
 // app.put(, );
 // app.delete(, );
