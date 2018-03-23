@@ -8,11 +8,16 @@ const app = express();
 
 app.use(bodyParser.json());
 
+const port = 3003;
+
 massive( process.env.DATABASE_URL)
     .then( db => {
         console.log('Connected to db!');
-        
-    .catch( err => console.log(err));
+        app.set('db', db),
+        app.get('db').init.seed().then( res => {
+            console.log(res);
+        }).catch( err => console.log(err)),
+        app.listen(port, () => console.log("Listening on port " + port));
     })
 
 // app.get(, );
@@ -20,5 +25,4 @@ massive( process.env.DATABASE_URL)
 // app.put(, );
 // app.delete(, );
 
-const port = 3003;
-app.listen(port, () => console.log("Listening on port " + port));
+

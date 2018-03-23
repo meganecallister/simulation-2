@@ -1,17 +1,16 @@
--- DROP TABLE IF EXISTS XXX;
+DROP TABLE IF EXISTS Dummy;
 
--- CREATE TABLE XXX
--- (
---     id SERIAL PRIMARY KEY,
---     name VARCHAR(60),
---     powers VARCHAR(100),
---     faction VARCHAR(10),
---     good BOOLEAN
--- );
+CREATE TABLE Dummy
+(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(60),
+    favColor VARCHAR(60),
+    age INTEGER
+);
 
--- INSERT INTO XXX
---     ( name, powers, faction, good)
---     VALUES
---         ( 'Spiderman', 'Webs', 'Marvel', true ),
---         ( 'Batman', 'Money', 'DC', true ),
---         ( 'Joker', 'Psycho', 'DC', false );
+INSERT INTO Dummy
+    ( name, favColor, age )
+    VALUES
+        ( 'Elaine', 'Red', 52 ),
+        ( 'Kurt', 'Blue', 53),
+        ( 'Heather', 'White', 20 );
